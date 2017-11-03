@@ -15,6 +15,4 @@ content = {
   subtitle: 'Travel Mugs and Bottles'
 }
 
-
-
 module.exports = router;
