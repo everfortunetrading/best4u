@@ -5,6 +5,7 @@ var db = require('../database');
 var con = db()
 
 router.get('/', function(req, res, next) {
+  
   res.render('admin');
 });
 
