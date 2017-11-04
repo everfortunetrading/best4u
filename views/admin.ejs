@@ -5,9 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Page</title>
+    
+    <script>
+
+        function show(element) {
+            document.getElementById(element).style.visibility = "visible";
+            document.getElementById(element).style.height = "auto";
+            document.getElementById(element).style.width = "auto";
+            document.getElementById(element).style.padding = "20px";
+        }
+
+        function hide(element) {
+            document.getElementById(element).style.visibility = "hidden";
+            document.getElementById(element).style.height = "0";
+            document.getElementById(element).style.width = "0";
+            document.getElementById(element).style.padding = "0";
+        }
+
+        function showHide(element) {
+            document.getElementById(element).style.visibility == "visible" ? hide(element) : show(element);
+        }
+    
+    </script>
+
+    <style>
+    #addProduct {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        padding: 0;
+    }
+
+    </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
+
 </head>
 <body>
+
+    <div class="wrapper style1">
+    <h2>Admin Page</h2>
+
+    <button onclick="showHide('addProduct')">Add a Product</button>
+    </div>
     
+    <div id="addProduct" class="wrapper style2">
     <form action="/finished" method=POST>
 
         Product Name:<br/>
@@ -18,12 +59,58 @@
         <input type="file" name="image">
         <br><br>
 
+        Product URL:<br>
+        <input type="text" name=link placeholder="URL">
+        <br><br>
+
         Product Description:<br/>
-        <textarea name="Description" id="" cols="30" rows="10"></textarea>
+        <textarea name="Description" cols="30" rows="10"></textarea>
         <br> <br>
 
-        <button type="submit">Add Product</button>
+        <button type="submit">Add</button>
     </form>
+    </div>
+
+    <div class="wrapper style1">
+        <h2>Current Products</h2>
+        <section class = "carousel">
+            <div class="reel">
+                    
+                <article>
+                    <a href="#" class="image featured"><img src="images/BEST4U/CAR BOTTLE/EF330A.JPG" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Pulvinar sagittis congue</a></h3>
+                    </header>
+                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                </article>
+
+                <article>
+                    <a href="#" class="image featured"><img src="images/BEST4U/CAR BOTTLE/EF330A_Colors.jpg" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Fermentum sagittis proin</a></h3>
+                    </header>
+                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                </article>
+
+                <article>
+                    <a href="#" class="image featured"><img src="images/BEST4U/SPORT WATER BOTTLE/EF150A_Colors.jpg" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Sed quis rhoncus placerat</a></h3>
+                    </header>
+                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                </article>
+
+                <article>
+                    <a href="#" class="image featured"><img src="images/BEST4U/SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG" alt="" /></a>
+                    <header>
+                        <h3><a href="#">Ultrices urna sit lobortis</a></h3>
+                    </header>
+                    <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+                </article>
+
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>
