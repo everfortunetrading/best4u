@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Page</title>
-    
+
     <script>
 
         function show(element) {
@@ -25,7 +25,7 @@
         function showHide(element) {
             document.getElementById(element).style.visibility == "visible" ? hide(element) : show(element);
         }
-    
+
     </script>
 
     <style>
@@ -47,24 +47,24 @@
 
     <button onclick="showHide('addProduct')">Add a Product</button>
     </div>
-    
+
     <div id="addProduct" class="wrapper style2">
-    <form action="/finished" method=POST>
+    <form action="/admin/products" method=POST>
 
         Product Name:<br/>
-        <input type="text" name="Name" placeholder="Product Name">
+        <input type="text" name="name" placeholder="Product Name">
         <br> <br>
 
         Product Image:<br/>
-        <input type="file" name="image">
+        <input type="text" name="image_url">
         <br><br>
 
         Product URL:<br>
-        <input type="text" name=link placeholder="URL">
+        <input type="text" name="amazon_url" placeholder="Product URL">
         <br><br>
 
         Product Description:<br/>
-        <textarea name="Description" cols="30" rows="10"></textarea>
+        <textarea name="description" cols="30" rows="10"></textarea>
         <br> <br>
 
         <button type="submit">Add</button>
@@ -75,7 +75,7 @@
         <h2>Current Products</h2>
         <section class = "carousel">
             <div class="reel">
-                    
+
                 <article>
                     <a href="#" class="image featured"><img src="images/BEST4U/CAR BOTTLE/EF330A.JPG" alt="" /></a>
                     <header>
@@ -107,6 +107,8 @@
                     </header>
                     <p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
                 </article>
+
+
 
             </div>
         </section>

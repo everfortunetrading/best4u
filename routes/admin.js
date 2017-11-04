@@ -9,8 +9,23 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/products', (req,res) => {
-  console.log(req.body);
+  var name, image_url, amazon_url, description
+  name = req.body.name;
+  image_url = req.body.image_url;
+  amazon_url = req.body.amazon_url;
+  description = req.body.description;
 
+
+  con.connect(function(err){
+    if (err) throw err;
+    var sql = "INSERT INTO products (name, description, image_url, amazon_url) VALUE (\""
+     + name + "\", \"" + description + "\", \"" + image_url + "\", \"" + amazon_url + "\" )"
+
+    con.query(sql, function(err, result) {
+      if(err) throw err
+      console.log("1 record inserted")
+    })
+  })
   res.redirect("/admin");
 })
 
