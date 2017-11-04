@@ -5,8 +5,13 @@ var db = require('../database');
 var con = db()
 
 router.get('/', function(req, res, next) {
-  
-  res.render('admin');
+  con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM products", function (err, result, fields) {
+    if (err) throw err;
+    res.render('admin', {products: result});
+  });
+});
 });
 
 router.post('/products', (req,res) => {
