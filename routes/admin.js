@@ -8,16 +8,36 @@ router.get('/', function(req, res, next) {
   var products = {products: [
     
     {picture : "CAR BOTTLE/EF330A.JPG", title: "Pulvinar sagittis congue", 
-    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."}, 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"}, 
         
     {picture : "CAR BOTTLE/EF330A_Colors.jpg", title: "Fermentum sagittis proin", 
-    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."}, 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"}, 
         
     {picture : "SPORT WATER BOTTLE/EF150A_Colors.jpg", title: "Sed quis rhoncus placerat", 
-    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."},
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"},
     
     {picture : "SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG", title: "Ultrices urna sit lobortis", 
-    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."}
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"},
+
+    {picture : "SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG", title: "Ultrices urna sit lobortis", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"},
+
+    {picture : "SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG", title: "Ultrices urna sit lobortis", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"},
+    
+    {picture : "SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG", title: "Ultrices urna sit lobortis", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"},
+
+    {picture : "SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG", title: "Ultrices urna sit lobortis", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna.",
+    amazon_url: "#"}
     
     ]}
   res.render('admin', products);

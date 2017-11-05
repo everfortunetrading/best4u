@@ -41,6 +41,7 @@
 
 </head>
 <body>
+    
 
     <div class="wrapper style1">
     <h2>Admin Page</h2>
@@ -54,7 +55,7 @@
         Product Name:<br/>
         <input type="text" name="name" placeholder="Product Name">
         <br> <br>
-
+    
         Product Image:<br/>
         <input type="text" name="image_url">
         <br><br>
@@ -73,13 +74,13 @@
 
     <div class="wrapper style1">
         <h2>Current Products</h2>
-        <section class = "carousel">
-            <div class="reel">
+            <div class="container">
+            <div class="row">
 
 
                 <% for(var i=0; i<products.length; i++) {%>
-                        <article>
-                                <a href="#" class="image featured"><img src="images/BEST4U/<%= products[i].picture %>" alt="" /></a>
+                        <article class ="4u 12u(mobile) special">
+                                <a href="<%= products[i].amazon_url %>" class="image featured"><img src="images/BEST4U/<%= products[i].picture %>" alt="" /></a>
                                 <header>
                                     <h3><a href="#"><%= products[i].title %></a></h3>
                                 </header>
@@ -87,10 +88,9 @@
                         </article>
                 <% } %>
 
-                products
             </div>
-        </section>
-    </div>
+         </div>
+        </div>
 
 </body>
 </html>
