@@ -6,38 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Page</title>
 
-    <script>
-
-        function show(element) {
-            document.getElementById(element).style.visibility = "visible";
-            document.getElementById(element).style.height = "auto";
-            document.getElementById(element).style.width = "auto";
-            document.getElementById(element).style.padding = "20px";
-        }
-
-        function hide(element) {
-            document.getElementById(element).style.visibility = "hidden";
-            document.getElementById(element).style.height = "0";
-            document.getElementById(element).style.width = "0";
-            document.getElementById(element).style.padding = "0";
-        }
-
-        function showHide(element) {
-            document.getElementById(element).style.visibility == "visible" ? hide(element) : show(element);
-        }
-
-    </script>
-
-    <style>
-    #addProduct {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-        padding: 0;
-    }
-
-    </style>
+    <script src="assets/admin-page.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/admin-page.css">
 
 </head>
 <body>
@@ -73,16 +44,15 @@
     </div>
 
     <div class="wrapper style1">
-        
+
             <div class="container">
             <h2>Current Products</h2> <br>
             <div class="row">
-
-
                 <% for(var i=0; i<products.length; i++) {%>
                         <article class ="4u 12u(mobile) special">
+
                                 <a href="<%= products[i].amazon_url %>" class="image featured" style="margin: 0;"><img src="<%= products[i].image_url %>" alt="" /></a>
-                             
+
                                 Name: <strong><%= products[i].name %></strong>
                                 <br>
                                 Description: <strong><%= products[i].description %></strong>
@@ -93,6 +63,7 @@
                                 <form action="/admin/delete?id=<%= products[i].id %>" method="POST">
                                 <button type="submit">Delete</button>
                                 </form>
+
 
                         </article>
                 <% } %>
