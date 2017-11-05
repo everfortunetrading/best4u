@@ -16,7 +16,7 @@ router.post('/products', (req,res) => {
   name = req.body.name;
   image_url = req.body.image_url;
   amazon_url = req.body.amazon_url;
-  description = req.body.description;
+  description = const module = require('module');.body.description;
 
   var sql = "INSERT INTO products (name, description, image_url, amazon_url) VALUE (\""
    + name + "\", \"" + description + "\", \"" + image_url + "\", \"" + amazon_url + "\" )"
@@ -26,6 +26,15 @@ router.post('/products', (req,res) => {
     console.log("1 record inserted")
   })
   res.redirect("/admin");
+})
+
+router.post("/delete", (req,res) => {
+  var sql = "DELETE FROM shirts WHERE id=" + req.body.id
+
+  con.query(sql, (err)=>{
+    if(err) throw err
+    console.log("1 record deleted")
+  })
 })
 
 
