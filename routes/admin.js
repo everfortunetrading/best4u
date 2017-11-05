@@ -5,13 +5,10 @@ var db = require('../database');
 var con = db()
 
 router.get('/', function(req, res, next) {
-  con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT * FROM products", function (err, result, fields) {
-    if (err) throw err;
-    res.render('admin', {products: result});
-  });
-});
+    con.query("SELECT * FROM products", function (err, result, fields) {
+      if (err) throw err;
+      res.render('admin', {products: result});
+    });
 });
 
 router.post('/products', (req,res) => {
@@ -21,16 +18,12 @@ router.post('/products', (req,res) => {
   amazon_url = req.body.amazon_url;
   description = req.body.description;
 
+  var sql = "INSERT INTO products (name, description, image_url, amazon_url) VALUE (\""
+   + name + "\", \"" + description + "\", \"" + image_url + "\", \"" + amazon_url + "\" )"
 
-  con.connect(function(err){
-    if (err) throw err;
-    var sql = "INSERT INTO products (name, description, image_url, amazon_url) VALUE (\""
-     + name + "\", \"" + description + "\", \"" + image_url + "\", \"" + amazon_url + "\" )"
-
-    con.query(sql, function(err, result) {
-      if(err) throw err
-      console.log("1 record inserted")
-    })
+  con.query(sql, function(err, result) {
+    if(err) throw err
+    console.log("1 record inserted")
   })
   res.redirect("/admin");
 })
