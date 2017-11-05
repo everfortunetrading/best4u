@@ -50,7 +50,7 @@
     </div>
 
     <div id="addProduct" class="wrapper style2">
-    <form action="/admin/products" method=POST>
+    <form action="/admin/create" method=POST>
 
         Product Name:<br/>
         <input type="text" name="name" placeholder="Product Name">
@@ -73,18 +73,27 @@
     </div>
 
     <div class="wrapper style1">
-        <h2>Current Products</h2>
+        
             <div class="container">
+            <h2>Current Products</h2> <br>
             <div class="row">
 
 
                 <% for(var i=0; i<products.length; i++) {%>
                         <article class ="4u 12u(mobile) special">
-                                <a href="<%= products[i].amazon_url %>" class="image featured"><img src="<%= products[i].image_url %>" alt="" /></a>
-                                <header>
-                                    <h3><a href="#"><%= products[i].name %></a></h3>
-                                </header>
-                                <p><%= products[i].description %></p>
+                                <a href="<%= products[i].amazon_url %>" class="image featured" style="margin: 0;"><img src="<%= products[i].image_url %>" alt="" /></a>
+                             
+                                Name: <strong><%= products[i].name %></strong>
+                                <br>
+                                Description: <strong><%= products[i].description %></strong>
+                                <br>
+                                URL: <strong><a href="<%= products[i].amazon_url %>"><%= products[i].amazon_url %></a></strong>
+                                <br>
+
+                                <form action="/admin/delete?id=<%= products[i].id %>" method="POST">
+                                <button type="submit">Delete</button>
+                                </form>
+
                         </article>
                 <% } %>
 
