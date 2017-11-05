@@ -80,7 +80,7 @@
 
                 <% for(var i=0; i<products.length; i++) {%>
                         <article class ="4u 12u(mobile) special">
-                                <a href="<%= products[i].amazon_url %>" class="image featured"><img src="images/BEST4U/<%= products[i].image_url %>" alt="" /></a>
+                                <a href="<%= products[i].amazon_url %>" class="image featured"><img src="<%= products[i].image_url %>" alt="" /></a>
                                 <header>
                                     <h3><a href="#"><%= products[i].name %></a></h3>
                                 </header>
