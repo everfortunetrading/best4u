@@ -5,8 +5,24 @@ var db = require('../database');
 var con = db()
 
 router.get('/', function(req, res, next) {
-  
-  res.render('admin');
+  var products = {products: [
+    
+    {picture : "CAR BOTTLE/EF330A.JPG", title: "Pulvinar sagittis congue", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."}, 
+        
+    {picture : "CAR BOTTLE/EF330A_Colors.jpg", title: "Fermentum sagittis proin", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."}, 
+        
+    {picture : "SPORT WATER BOTTLE/EF150A_Colors.jpg", title: "Sed quis rhoncus placerat", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."},
+    
+    {picture : "SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG", title: "Ultrices urna sit lobortis", 
+    description: "Commodo id natoque malesuada sollicitudin elit suscipit magna."}
+    
+    ]}
+  res.render('admin', products);
+
+
 });
 
 router.post('/products', (req,res) => {
