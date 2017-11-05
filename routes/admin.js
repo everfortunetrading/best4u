@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.post('/products', (req,res) => {
+router.post('/create', (req,res) => {
   var name, image_url, amazon_url, description
   name = req.body.name;
   image_url = req.body.image_url;
