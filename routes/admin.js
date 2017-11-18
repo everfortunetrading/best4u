@@ -49,7 +49,7 @@ router.post("/delete", (req,res) => {
 })
 
 router.get('/login', function(req, res){
-  res.render('login');
+  res.render('login', {alert: false});
 })
 
 router.post('/login', function(req, res){
@@ -61,8 +61,7 @@ router.post('/login', function(req, res){
     loggedIn = true;
     res.redirect('/admin')
   }else{
-    res.redirect('/admin/login')
-    console.log('log fail')
+    res.render('login', {alert: true})
   }
 
 })

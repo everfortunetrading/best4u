@@ -15,6 +15,9 @@
    <div>
      <h2>Best4u Admin Login</h2>
      <p>In order to modify item listings, please login first.</p>
+     <% if(alert === true){ %>
+       <p> Log in failed </p>
+     <% } %>
      <form action='/admin/login' method='post'>
        <span></span>
          <input type="text" name="user" placeholder="Username">
