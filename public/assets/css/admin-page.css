@@ -8,7 +8,7 @@
 /*----------------------------------------------
 CSS settings for HTML div Exact Center
 ------------------------------------------------*/
-#abc, #def {
+#abc, .def {
 width:100%;
 height:100%;
 opacity:.95;

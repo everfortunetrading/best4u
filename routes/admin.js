@@ -38,6 +38,26 @@ router.post('/create', (req,res) => {
   res.redirect("/admin");
 })
 
+router.post('/edit', (req,res) => {
+  var fields = {
+    name: req.body.name,
+    image_url: req.body.image_url,
+    amazon_url:req.body.amazon_url,
+    description: req.body.description
+  }
+
+  for(var param in fields){
+    var sql = "UPDATE products SET " + param + " = \"" + fields[param] + "\" WHERE id = " + req.query.id;
+
+    con.query(sql, function(err, result) {
+      if(err) throw err
+      console.log("1 record edited")
+    })
+  }
+
+  res.redirect('/admin')
+})
+
 router.post("/delete", (req,res) => {
   var sql = "DELETE FROM products WHERE id=" + req.query.id
   con.query(sql, (err)=>{

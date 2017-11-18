@@ -11,34 +11,12 @@
     <link rel="stylesheet" href="assets/css/admin-page.css">
 </head>
 <body>
-    
+
     <div class="wrapper style1">
     <h2>Admin Page</h2>
 
     <button onclick="div_show('abc')">Add a Product</button>
-    </div>
-
-    <div id="addProduct" class="wrapper style2">
-    <form action="/admin/create" method=POST>
-
-        Product Name:<br/>
-        <input type="text" name="name" placeholder="Product Name">
-        <br> <br>
-
-        Product Image:<br/>
-        <input type="text" name="image_url">
-        <br><br>
-
-        Product URL:<br>
-        <input type="text" name="amazon_url" placeholder="Product URL">
-        <br><br>
-
-        Product Description:<br/>
-        <textarea name="description" cols="30" rows="10"></textarea>
-        <br> <br>
-
-        <button type="submit">Add</button>
-    </form>
+    <form><button type='submit'>Log Out</button></form>
     </div>
 
     <div class="wrapper style1">
@@ -60,69 +38,71 @@
 
                                 <form action="/admin/delete?id=<%= products[i].id %>" method="POST">
                                 <button type="submit">Delete</button>
-                                <button onclick="div_show('def')">Edit Product</button>
                                 </form>
+                                <button onclick="div_show('editform<%= products[i].id %>')">Edit Product</button>
+                                <div id="editform<%= products[i].id %>" class="def">
+                                        <!-- Popup Div Starts Here -->
+                                        <div id="popupContact">
+                                        <!-- Contact Us Form -->
+                                        <form action="/admin/edit?id=<%= products[i].id %>" method=POST id=ProdForm>
 
+                                                    <img id="close" src="images/close.png" onclick ="div_hide('editform<%= products[i].id %>')">
+                                                    Product Name:<br/>
+                                                    <input type="text" name="name" placeholder="Product Name" value="<%= products[i].name %>">
+                                                    <br> <br>
+
+                                                    Product Image:<br/>
+                                                    <input type="text" name="image_url" value="<%= products[i].image_url %>">
+                                                    <br><br>
+
+                                                    Product URL:<br>
+                                                    <input type="text" name="amazon_url" placeholder="Product URL" value="<%= products[i].amazon_url %>">
+                                                    <br><br>
+
+                                                    Product Description:<br/>
+                                                    <textarea name="description" cols="30" rows="10"><%= products[i].description %></textarea>
+                                                    <br> <br>
+
+                                                    <button type="submit">Save Changes</button>
+                                                </form>
+                                        </div>
+                                </div>
 
                         </article>
                 <% } %>
 
             </div>
          </div>
-         <div id="abc">
-                <!-- Popup Div Starts Here -->
-                <div id="popupContact">
-                <!-- Contact Us Form -->
-                <form action="/admin/create" method=POST id=ProdForm>
-                            
-                            <img id="close" src="images/close.png" onclick ="div_hide('abc')">
-                            Product Name:<br/>
-                            <input type="text" name="name" placeholder="Product Name">
-                            <br> <br>
-                    
-                            Product Image:<br/>
-                            <input type="text" name="image_url">
-                            <br><br>
-                    
-                            Product URL:<br>
-                            <input type="text" name="amazon_url" placeholder="Product URL">
-                            <br><br>
-                    
-                            Product Description:<br/>
-                            <textarea name="description" cols="30" rows="10"></textarea>
-                            <br> <br>
-                    
-                            <button type="submit">Add</button>
-                        </form>
-                </div>
-        </div>
-        <div id="def">
-                <!-- Popup Div Starts Here -->
-                <div id="popupContact">
-                <!-- Contact Us Form -->
-                <form action="/admin/edit" method=POST id=ProdForm>
-                            
-                            <img id="close" src="images/close.png" onclick ="div_hide('abc')">
-                            Product Name:<br/>
-                            <input type="text" name="name" placeholder="Product Name">
-                            <br> <br>
-                    
-                            Product Image:<br/>
-                            <input type="text" name="image_url">
-                            <br><br>
-                    
-                            Product URL:<br>
-                            <input type="text" name="amazon_url" placeholder="Product URL">
-                            <br><br>
-                    
-                            Product Description:<br/>
-                            <textarea name="description" cols="30" rows="10"></textarea>
-                            <br> <br>
-                    
-                            <button type="submit">Save Changes</button>
-                        </form>
-                </div>
-        </div>
+
+
+
+        <div id="abc">
+               <!-- Popup Div Starts Here -->
+               <div id="popupContact">
+               <!-- Contact Us Form -->
+               <form action="/admin/create" method=POST id=ProdForm>
+
+                           <img id="close" src="images/close.png" onclick ="div_hide('abc')">
+                           Product Name:<br/>
+                           <input type="text" name="name" placeholder="Product Name">
+                           <br> <br>
+
+                           Product Image:<br/>
+                           <input type="text" name="image_url">
+                           <br><br>
+
+                           Product URL:<br>
+                           <input type="text" name="amazon_url" placeholder="Product URL">
+                           <br><br>
+
+                           Product Description:<br/>
+                           <textarea name="description" cols="30" rows="10"></textarea>
+                           <br> <br>
+
+                           <button type="submit">Add</button>
+                       </form>
+               </div>
+       </div>
 
 </body>
 </html>
