@@ -9,15 +9,13 @@
     <script src="assets/js/admin-page.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/admin-page.css">
-
 </head>
 <body>
-
-
+    
     <div class="wrapper style1">
     <h2>Admin Page</h2>
 
-    <button onclick="showHide('addProduct')">Add a Product</button>
+    <button onclick="div_show()">Add a Product</button>
     </div>
 
     <div id="addProduct" class="wrapper style2">
@@ -70,6 +68,32 @@
 
             </div>
          </div>
+         <div id="abc">
+                <!-- Popup Div Starts Here -->
+                <div id="popupContact">
+                <!-- Contact Us Form -->
+                <form action="/admin/create" method=POST id=ProdForm>
+                            
+                            <img id="close" src="images/close.png" onclick ="div_hide()">
+                            Product Name:<br/>
+                            <input type="text" name="name" placeholder="Product Name">
+                            <br> <br>
+                    
+                            Product Image:<br/>
+                            <input type="text" name="image_url">
+                            <br><br>
+                    
+                            Product URL:<br>
+                            <input type="text" name="amazon_url" placeholder="Product URL">
+                            <br><br>
+                    
+                            Product Description:<br/>
+                            <textarea name="description" cols="30" rows="10"></textarea>
+                            <br> <br>
+                    
+                            <button type="submit">Add</button>
+                        </form>
+                </div>
         </div>
 
 </body>
