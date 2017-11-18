@@ -15,7 +15,7 @@
     <div class="wrapper style1">
     <h2>Admin Page</h2>
 
-    <button onclick="div_show()">Add a Product</button>
+    <button onclick="div_show('abc')">Add a Product</button>
     </div>
 
     <div id="addProduct" class="wrapper style2">
@@ -60,6 +60,7 @@
 
                                 <form action="/admin/delete?id=<%= products[i].id %>" method="POST">
                                 <button type="submit">Delete</button>
+                                <button onclick="div_show('def')">Edit Product</button>
                                 </form>
 
 
@@ -74,7 +75,7 @@
                 <!-- Contact Us Form -->
                 <form action="/admin/create" method=POST id=ProdForm>
                             
-                            <img id="close" src="images/close.png" onclick ="div_hide()">
+                            <img id="close" src="images/close.png" onclick ="div_hide('abc')">
                             Product Name:<br/>
                             <input type="text" name="name" placeholder="Product Name">
                             <br> <br>
@@ -92,6 +93,33 @@
                             <br> <br>
                     
                             <button type="submit">Add</button>
+                        </form>
+                </div>
+        </div>
+        <div id="def">
+                <!-- Popup Div Starts Here -->
+                <div id="popupContact">
+                <!-- Contact Us Form -->
+                <form action="/admin/edit" method=POST id=ProdForm>
+                            
+                            <img id="close" src="images/close.png" onclick ="div_hide('abc')">
+                            Product Name:<br/>
+                            <input type="text" name="name" placeholder="Product Name">
+                            <br> <br>
+                    
+                            Product Image:<br/>
+                            <input type="text" name="image_url">
+                            <br><br>
+                    
+                            Product URL:<br>
+                            <input type="text" name="amazon_url" placeholder="Product URL">
+                            <br><br>
+                    
+                            Product Description:<br/>
+                            <textarea name="description" cols="30" rows="10"></textarea>
+                            <br> <br>
+                    
+                            <button type="submit">Save Changes</button>
                         </form>
                 </div>
         </div>

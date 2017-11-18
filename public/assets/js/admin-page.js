@@ -28,11 +28,11 @@ function check_empty() {
     }
 
 //Function To Display Popup
-function div_show() {
-    document.getElementById('abc').style.display = "block";
+function div_show(id) {
+    document.getElementById(id).style.display = "block";
 }
 
 //Function to Hide Popup
-function div_hide(){
-    document.getElementById('abc').style.display = "none";
+function div_hide(id){
+    document.getElementById(id).style.display = "none";
 }
