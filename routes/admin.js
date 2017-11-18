@@ -1,14 +1,24 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../database');
+var user = require('../admin_credential')
 
 var con = db()
+var app = express()
+
+var loggedIn = false;
 
 router.get('/', function(req, res, next) {
+  if(loggedIn){
     con.query("SELECT * FROM products", function (err, result, fields) {
       if (err) throw err;
       res.render('admin', {products: result});
     });
+  } else {
+    console.log('i was here')
+    res.redirect('/admin/login')
+  }
+
 });
 
 router.post('/create', (req,res) => {
@@ -38,5 +48,30 @@ router.post("/delete", (req,res) => {
   res.redirect("/admin")
 })
 
+router.get('/login', function(req, res){
+  res.render('login');
+})
 
+router.post('/login', function(req, res){
+  var usernameInput, passInput;
+  usernameInput = req.body.user
+  passInput = req.body.pass
+
+  if(authenticate(usernameInput, passInput)){
+    loggedIn = true;
+    res.redirect('/admin')
+  }else{
+    res.redirect('/admin/login')
+    console.log('log fail')
+  }
+
+})
+
+function authenticate(u, p){
+  if(user.username === u && user.password === p){
+    return true
+  } else {
+    return false
+  }
+}
 module.exports = router;
