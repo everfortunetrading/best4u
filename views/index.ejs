@@ -27,87 +27,17 @@
 			<!-- Carousel -->
 				<section class="carousel">
 					<div class="reel">
+						<% for(var i=0; i<products.length; i++) {%>
+										<article>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/CAR BOTTLE/EF330A.JPG" alt="" /></a>
-							<header>
-								<h3><a href="#">Pulvinar sagittis congue</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/CAR BOTTLE/EF330A_Colors.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Fermentum sagittis proin</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/SPORT WATER BOTTLE/EF150A_Colors.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/SPORT WATER BOTTLE/EF150A-BK/PK1A2122.JPG" alt="" /></a>
-							<header>
-								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/WIDE MOUTH WATER BOTTLE/EF2110A_Colors.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Varius magnis sollicitudin</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/WIDE MOUTH WATER BOTTLE/EF2110A.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Pulvinar sagittis congue</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/CAR BOTTLE/EF330A-S/PK1A2152.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Fermentum sagittis proin</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/SPORT WATER BOTTLE/EF150A-R/PK1A2130.JPG" alt="" /></a>
-							<header>
-								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/WIDE MOUTH WATER BOTTLE/EF2110A-BL/PK1A2098.JPG" alt="" /></a>
-							<header>
-								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/BEST4U/WIDE MOUTH WATER BOTTLE/EF2110A-T/PK1A2092.JPG" alt="" /></a>
-							<header>
-								<h3><a href="#">Varius magnis sollicitudin</a></h3>
-							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
+														<a href="<%= products[i].amazon_url %>" class="image featured"><img src="<%= products[i].image_url %>" alt="" /></a>
+														<header>
+															<h3><a href="<%= products[i].amazon_url %>"><%= products[i].name %></a></h3>
+														</header>
+														<p><%= products[i].description %></p>
+														
+										</article>
+						<% } %>
 					</div>
 				</section>
 
